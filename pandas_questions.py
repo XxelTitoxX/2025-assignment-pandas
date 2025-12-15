@@ -141,8 +141,8 @@ def plot_referendum_map(referendum_result_by_regions):
 
     merged = geo.merge(df, on="code_reg", how="left")
 
-    expressed = merged["Choice A"].fillna(0) + merged["Choice B"].fillna(0)
-    merged["ratio"] = merged["Choice A"].fillna(0) / expressed.replace(0, pd.NA)
+    expressd = merged["Choice A"].fillna(0) + merged["Choice B"].fillna(0)
+    merged["ratio"] = merged["Choice A"].fillna(0) / expressd.replace(0, pd.NA)
 
     ax = merged.plot(
         column="ratio",
